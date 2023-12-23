@@ -1,19 +1,19 @@
 /* Google fonts import */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
-/* Asterisk wildcard selector to override default styles added by the browser */
+
+/* Asterisk wildcard selector to verride default styles added by the browser */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-/* General styles */
 body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    /* Generic project styles */
+    /*generic project style */
     color: #3a3a3a;
     font-family: 'Lato', sans-serif;
 }
@@ -45,16 +45,20 @@ header {
 header a {
     text-decoration: none;
     color: inherit;
+
 }
+
 
 #menu {
     font-size: 110%;
     letter-spacing: 4px;
     list-style-type: none;
+
 }
 
 #menu > li {
     margin-bottom: 1em;
+
 }
 
 .active {
@@ -62,51 +66,54 @@ header a {
 }
 
 /* Navbar styles with dropdown toggle */
+
 nav {
     position: absolute;
     background-color: #ffffff;
     width: 100%;
-    left: 0;
     padding: 0 1rem;
+    left: 0;
     box-shadow: 0 2px 2px #3a3a3a;
     display: none;
     top: 100%;
+
+
 }
 
 /* Nav toggle */
 #nav-toggle:checked~nav {
     display: block;
+
 }
 
 #nav-toggle {
     display: none;
+
 }
 
 .nav-toggle-label {
     font-size: 2rem;
+
 }
 
 /* Main content */
 main {
-    /* Enlarge main element to push footer down*/
+    /* Make main element take up any surplus space to push footer down */
     flex: 1 0 auto;
-    /* Add margin at the top to prevent content from being covered by the header */
     margin-top: 47px;
-    /* Enable flex properties for child elements */
-    display: flex;
-    flex-direction: column;
 }
 
-/* Hero section */
+/* hero section */
 #hero {
     height: 600px;
     width: 100%;
     background: url("../images/hero-image.webp") no-repeat center center/cover;
     position: relative;
+    
 }
 
 #cover-text {
-    /* Final rgba value sets the opacity so it is semi-transparent */
+    /* Final rgba value sets the oppacity so it is semi-transparant */
     background-color: rgba(241, 109, 107, .7);
     font-size: 130%;
     position: absolute;
@@ -122,38 +129,43 @@ main {
 }
 
 /* Reasons section */
+
 #reasons {
-    width: 90%;
     margin: 20px auto;
+    width: 90%
+
 }
 
-#reasons h2 {
-    margin-bottom: 20px;
-    text-align: center;
+#reasons > h2 {
     font-size: 280%;
+    text-align: center;
 }
 
-#benefits-physical > div,
-#benefits-mental > div {
-    line-height: 20px;
-    margin-bottom: 20px;
+#benefits {
+    margin-top: 20px;
 }
 
-#benefits p {
-    padding: 0 20px;
+#benefits-physical > div, #benefits-mental > div {
+margin-bottom: 20px;
+line-height: 20px;
+
 }
 
-#benefits hr {
+#benefits-physical hr, #benefits-mental hr {
     border-top: 1px solid #3a3a3a;
     margin: 5px 0;
 }
 
+#benefits-physical p, #benefits-mental p {
+    padding: 0 20px;
+} 
+
 #circle-cover-bg {
-    background: url('../images/reasons-image.webp') no-repeat top center / cover;
+    background: url("../images/reasons-image.webp") no-repeat top center/cover;
     height: 90vw;
     width: 90vw;
     margin-bottom: 20px;
-    /* Makes the square image into a circle */
+    /* Makes the square a cirlcle */
     border-radius: 50%;
     max-width: 300px;
     max-height: 300px;
@@ -167,31 +179,30 @@ main {
 
 /* Meetup Times section */
 #times {
-    background: url('../images/dublin-city.webp') no-repeat center/cover;
-    /* Handles responsivity without the need for a media query */
-    display: flex;
-    flex-wrap: wrap;
+background: url("../images/dublin-city.webp") no-repeat center/cover;
+display: flex;
+flex-wrap: wrap;
 }
 
 #times div {
     color: #fafafa;
-    background-color: rgba(0, 0, 0, .6);
+    background-color: rgb(0, 0, 0, .6);
     padding: 15px;
     text-align: center;
     /* This will not wrap on screens of less than 400px wide.
     Each div will expand to fill the available space on its row */
     flex-basis: 200px;
     flex-grow: 1;
-    /* Creates a grid of meetup time dives over the background image */
-    border: 2px solid white;
+    /* Creates a grid of meetup time dives over the background image*/
+    border: 2px solid #ffffff;
 }
 
 #times h3 {
-    /* Override the heading colour set in general styles */
+    /* Override the heading color set in general style */
     color: #fafafa;
 }
 
-/* Gallery page */
+/* Gallery Page */
 #photos img {
     width: 100%;
     line-height: 1em;
@@ -201,61 +212,83 @@ main {
     line-height: 0;
 }
 
-/* Form */
-#signup {
-    background-image: url("../images/signup-image.webp");
-    background-size: cover;
-    background-position: 75%;
-    padding: 20px 10% 0 10%;
-    flex-grow: 1;
+/* Sign Up page */
+main {
+    display: flex;
+    flex-direction: column;
 }
 
+#signup {
+    background-size: cover;
+    background-position: 75%;
+    flex-grow: 1;
+    padding: 20px 10px;
+    background-image: url("../images/signup-image.webp");
+}
+
+#signup h2 {
+    color: #fafafa;
+    padding-bottom: 20px;
+}
 
 #signup-form {
     color: #ffffff;
     background-color: rgba(60, 60, 60, 0.6);
     padding: 30px;
+
 }
 
-
-#signup-form>h2 {
+.text-input {
+    background-color: transparent;
     color: #fafafa;
+    border: 1px solid #fafafa;
+    border-radius: 2px;
+}
+
+#first_name {
+    width: 100%;
+    height: 25px;
+    padding: 0 5px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+
+}
+
+#last_name {
+    width: 100%;
+    height: 25px;
+    padding: 0 5px;
+    margin-top: 5px;
     margin-bottom: 20px;
 }
 
-
-.text-input {
-    background: transparent;
-    color: #fafafa;
+#email_address {
     width: 100%;
     height: 25px;
-    margin: 5px 0 20px 0;
-    border: 1px solid #fafafa;
-    border-radius: 2px;
     padding: 0 5px;
+    margin-top: 5px;
+    margin-bottom: 20px;
 }
-
 
 .radio-buttons {
-    width: 100%;
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 
-
 .join-button {
-    margin-top: 20px;
     border-radius: 2px;
-    padding: 15px 32px;
-    font-size: 100%;
     background-color: #454b1b;
     color: #fafafa;
+    font-size: 100%;
+    padding: 15px 32px;
+    margin-top: 20px;
 }
 
 /* Footer */
 #social-networks {
     text-align: center;
-    padding: 20px 0;
+    padding: 20px;
     display: flex;
     justify-content: space-evenly;
     list-style-type: none;
@@ -275,19 +308,21 @@ main {
     }
 }
 
+
 /* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
     /* Header */
     nav {
-        display: block;
-        position: relative;
-        box-shadow: none;
-        width: fit-content;
-        padding-right: 1rem;
+    display: block;
+    position: relative;
+    box-shadow: none;
+    width: fit-content;
+    padding-right: 1rem;
     }
 
     #menu {
         display: flex;
+
     }
 
     #menu > li {
@@ -306,7 +341,7 @@ main {
 
     /* Main content */
     main {
-        /* Push main content down to accommodate larger header */
+        /* Push main content down to accomodate larger header */
         margin-top: 79px;
     }
 
@@ -337,19 +372,20 @@ main {
     /* Gallery */
     #photos {
         column-count: 3;
+    
     }
 
-    /* Form */
+    /* Sign up page */
     #signup {
         background-position: center;
         position: relative;
     }
-
+    
     #signup-form {
         max-width: 400px;
-        position: absolute;
-        left: 10%;
         top: 150px;
+        left: 10%;
+
     }
 
     .text-input:hover {
@@ -362,19 +398,24 @@ main {
     }
 }
 
-/* Large devices (laptops and desktops, 992px and up) */
+ /* Media query: laptops and larger (992px and up) */
 @media screen and (min-width: 992px) {
-    #menu a:hover{
-        border-bottom: 1px solid #3a3a3a;
+    /* Header */
+    #menu a:hover {
+       border-bottom: 1px solid #3a3a3a;
     }
 
     /* Gallery */
     #photos {
         column-count: 4;
+    
     }
+
 }
 
-@media screen and (min-width: 1200px) {    
+ /* Media query: large screens (1200px and up) */
+ @media screen and (min-width: 1200px) {
+
     /* Reasons section */
     #benefits {
         display: flex;
@@ -386,7 +427,7 @@ main {
     }
 
     #benefits-image {
-        order: 0
+        order: 0;
     }
 
     #benefits-mental {
@@ -400,4 +441,5 @@ main {
     #benefits-physical > div {
         align-self: flex-end;
     }
-}
+
+ }
